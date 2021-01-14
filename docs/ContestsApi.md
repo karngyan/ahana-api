@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**contestControllerGetContest**](ContestsApi.md#contestControllerGetContest) | **GET** /contests/{contestId} | 
 [**contestControllerGetContestsBySeries**](ContestsApi.md#contestControllerGetContestsBySeries) | **GET** /contests/ | 
+[**contestControllerRegisterForContest**](ContestsApi.md#contestControllerRegisterForContest) | **GET** /contests/{contestId}/register | 
 
 
 <a name="contestControllerGetContest"></a>
@@ -90,6 +91,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ModelsContest]**](ModelsContest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="contestControllerRegisterForContest"></a>
+# **contestControllerRegisterForContest**
+> contestControllerRegisterForContest(xUserApiKey, contestId)
+
+
+
+Register for an upcoming contest
+
+### Example
+```javascript
+var AhanaApi = require('ahana_api');
+
+var apiInstance = new AhanaApi.ContestsApi();
+
+var xUserApiKey = "xUserApiKey_example"; // String | User API Key
+
+var contestId = 789; // Integer | the contest id you want to register for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.contestControllerRegisterForContest(xUserApiKey, contestId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xUserApiKey** | **String**| User API Key | 
+ **contestId** | **Integer**| the contest id you want to register for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

@@ -145,6 +145,57 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
+
+    /**
+     * Callback function to receive the result of the contestControllerRegisterForContest operation.
+     * @callback module:api/ContestsApi~contestControllerRegisterForContestCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Register for an upcoming contest
+     * @param {String} xUserApiKey User API Key
+     * @param {Integer} contestId the contest id you want to register for
+     * @param {module:api/ContestsApi~contestControllerRegisterForContestCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.contestControllerRegisterForContest = function(xUserApiKey, contestId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'xUserApiKey' is set
+      if (xUserApiKey == undefined || xUserApiKey == null) {
+        throw "Missing the required parameter 'xUserApiKey' when calling contestControllerRegisterForContest";
+      }
+
+      // verify the required parameter 'contestId' is set
+      if (contestId == undefined || contestId == null) {
+        throw "Missing the required parameter 'contestId' when calling contestControllerRegisterForContest";
+      }
+
+
+      var pathParams = {
+        'contestId': contestId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'X-User-ApiKey': xUserApiKey
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/contests/{contestId}/register', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
   };
 
   return exports;

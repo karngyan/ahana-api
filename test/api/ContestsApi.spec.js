@@ -79,6 +79,16 @@
         done();
       });
     });
+    describe('contestControllerRegisterForContest', function() {
+      it('should call contestControllerRegisterForContest successfully', function(done) {
+        //uncomment below and update the code to test contestControllerRegisterForContest
+        //instance.contestControllerRegisterForContest(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));
