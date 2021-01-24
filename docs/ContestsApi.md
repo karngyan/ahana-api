@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="contestControllerGetContest"></a>
 # **contestControllerGetContest**
-> ModelsContestResponse contestControllerGetContest(contestId)
+> ModelsContestResponse contestControllerGetContest(xUserApiKey, contestId)
 
 
 
@@ -23,6 +23,8 @@ var AhanaApi = require('ahana_api');
 
 var apiInstance = new AhanaApi.ContestsApi();
 
+var xUserApiKey = "xUserApiKey_example"; // String | User API Key
+
 var contestId = 789; // Number | the ContestId you want to get
 
 
@@ -33,13 +35,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.contestControllerGetContest(contestId, callback);
+apiInstance.contestControllerGetContest(xUserApiKey, contestId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xUserApiKey** | **String**| User API Key | 
  **contestId** | **Number**| the ContestId you want to get | 
 
 ### Return type

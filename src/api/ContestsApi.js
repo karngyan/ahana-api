@@ -58,12 +58,18 @@
 
     /**
      * Get Contest by id
+     * @param {String} xUserApiKey User API Key
      * @param {Number} contestId the ContestId you want to get
      * @param {module:api/ContestsApi~contestControllerGetContestCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelsContestResponse}
      */
-    this.contestControllerGetContest = function(contestId, callback) {
+    this.contestControllerGetContest = function(xUserApiKey, contestId, callback) {
       var postBody = null;
+
+      // verify the required parameter 'xUserApiKey' is set
+      if (xUserApiKey === undefined || xUserApiKey === null) {
+        throw new Error("Missing the required parameter 'xUserApiKey' when calling contestControllerGetContest");
+      }
 
       // verify the required parameter 'contestId' is set
       if (contestId === undefined || contestId === null) {
@@ -79,6 +85,7 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'X-User-ApiKey': xUserApiKey
       };
       var formParams = {
       };

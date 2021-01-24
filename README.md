@@ -97,6 +97,8 @@ var AhanaApi = require('ahana_api');
 
 var api = new AhanaApi.ContestsApi()
 
+var xUserApiKey = "xUserApiKey_example"; // {String} User API Key
+
 var contestId = 789; // {Number} the ContestId you want to get
 
 
@@ -107,7 +109,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.contestControllerGetContest(contestId, callback);
+api.contestControllerGetContest(xUserApiKey, contestId, callback);
 
 ```
 

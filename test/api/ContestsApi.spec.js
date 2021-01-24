@@ -40,9 +40,10 @@
         it('should call contestControllerGetContest successfully', function(done) {
           // TODO: uncomment, update parameter values for contestControllerGetContest call and complete the assertions
           /*
+          var xUserApiKey = "xUserApiKey_example";
           var contestId = 789;
 
-          instance.contestControllerGetContest(contestId, function(error, data, response) {
+          instance.contestControllerGetContest(xUserApiKey, contestId, function(error, data, response) {
             if (error) {
               done(error);
               return;
