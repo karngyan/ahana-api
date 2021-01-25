@@ -2,7 +2,7 @@
   "name": "ahana_api",
   "version": "1.0.0",
   "description": "Ahana_Web_Server_API",
-  "license": "GPLv3.0",
+  "license": "AGPLv3.0",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha --recursive"

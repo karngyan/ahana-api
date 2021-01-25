@@ -95,11 +95,9 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var AhanaApi = require('ahana_api');
 
-var api = new AhanaApi.ContestsApi()
+var api = new AhanaApi.CodingProblemsApi()
 
-var xUserApiKey = "xUserApiKey_example"; // {String} User API Key
-
-var contestId = 789; // {Number} the ContestId you want to get
+var problemId = 789; // {Number} the problemId you want to get
 
 
 var callback = function(error, data, response) {
@@ -109,7 +107,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.contestControllerGetContest(xUserApiKey, contestId, callback);
+api.codingProblemControllerGetCodingProblemById(problemId, callback);
 
 ```
 
@@ -119,10 +117,12 @@ All URIs are relative to *http://127.0.0.1:8081/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AhanaApi.CodingProblemsApi* | [**codingProblemControllerGetCodingProblemById**](docs/CodingProblemsApi.md#codingProblemControllerGetCodingProblemById) | **GET** /coding-problems/{problemId} | 
+*AhanaApi.CodingProblemsApi* | [**codingProblemControllerGetCodingProblemsByContest**](docs/CodingProblemsApi.md#codingProblemControllerGetCodingProblemsByContest) | **GET** /coding-problems/ | 
+*AhanaApi.CodingProblemsApi* | [**codingProblemControllerGetInputFileAndInitSubmissionDeadline**](docs/CodingProblemsApi.md#codingProblemControllerGetInputFileAndInitSubmissionDeadline) | **GET** /coding-problems/{pid}/input | 
 *AhanaApi.ContestsApi* | [**contestControllerGetContest**](docs/ContestsApi.md#contestControllerGetContest) | **GET** /contests/{contestId} | 
 *AhanaApi.ContestsApi* | [**contestControllerGetContestsBySeries**](docs/ContestsApi.md#contestControllerGetContestsBySeries) | **GET** /contests/ | 
 *AhanaApi.ContestsApi* | [**contestControllerRegisterForContest**](docs/ContestsApi.md#contestControllerRegisterForContest) | **GET** /contests/{contestId}/register | 
-*AhanaApi.ProblemsApi* | [**problemControllerGetInputFileAndInitSubmissionDeadline**](docs/ProblemsApi.md#problemControllerGetInputFileAndInitSubmissionDeadline) | **GET** /problems/{pid}/input | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetAllSeries**](docs/SeriesApi.md#seriesControllerGetAllSeries) | **GET** /series/ | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetSeries**](docs/SeriesApi.md#seriesControllerGetSeries) | **GET** /series/{sid} | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmission**](docs/SubmissionsApi.md#submissionControllerGetSubmission) | **GET** /submissions/{submissionId} | 
@@ -133,6 +133,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AhanaApi.ModelsCodingProblem](docs/ModelsCodingProblem.md)
  - [AhanaApi.ModelsContest](docs/ModelsContest.md)
  - [AhanaApi.ModelsContestResponse](docs/ModelsContestResponse.md)
  - [AhanaApi.ModelsEUser](docs/ModelsEUser.md)

@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsContest', 'model/ModelsContestResponse', 'model/ModelsEUser', 'model/ModelsSeries', 'model/ModelsSignUpMode', 'model/ModelsSubmission', 'model/ModelsSubmissionResponse', 'model/ModelsSubmissionType', 'model/ModelsUser', 'model/ModelsUserType', 'model/ModelsVerdictType', 'api/ContestsApi', 'api/ProblemsApi', 'api/SeriesApi', 'api/SubmissionsApi', 'api/UsersApi'], factory);
+    define(['ApiClient', 'model/ModelsCodingProblem', 'model/ModelsContest', 'model/ModelsContestResponse', 'model/ModelsEUser', 'model/ModelsSeries', 'model/ModelsSignUpMode', 'model/ModelsSubmission', 'model/ModelsSubmissionResponse', 'model/ModelsSubmissionType', 'model/ModelsUser', 'model/ModelsUserType', 'model/ModelsVerdictType', 'api/CodingProblemsApi', 'api/ContestsApi', 'api/SeriesApi', 'api/SubmissionsApi', 'api/UsersApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ModelsContest'), require('./model/ModelsContestResponse'), require('./model/ModelsEUser'), require('./model/ModelsSeries'), require('./model/ModelsSignUpMode'), require('./model/ModelsSubmission'), require('./model/ModelsSubmissionResponse'), require('./model/ModelsSubmissionType'), require('./model/ModelsUser'), require('./model/ModelsUserType'), require('./model/ModelsVerdictType'), require('./api/ContestsApi'), require('./api/ProblemsApi'), require('./api/SeriesApi'), require('./api/SubmissionsApi'), require('./api/UsersApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ModelsCodingProblem'), require('./model/ModelsContest'), require('./model/ModelsContestResponse'), require('./model/ModelsEUser'), require('./model/ModelsSeries'), require('./model/ModelsSignUpMode'), require('./model/ModelsSubmission'), require('./model/ModelsSubmissionResponse'), require('./model/ModelsSubmissionType'), require('./model/ModelsUser'), require('./model/ModelsUserType'), require('./model/ModelsVerdictType'), require('./api/CodingProblemsApi'), require('./api/ContestsApi'), require('./api/SeriesApi'), require('./api/SubmissionsApi'), require('./api/UsersApi'));
   }
-}(function(ApiClient, ModelsContest, ModelsContestResponse, ModelsEUser, ModelsSeries, ModelsSignUpMode, ModelsSubmission, ModelsSubmissionResponse, ModelsSubmissionType, ModelsUser, ModelsUserType, ModelsVerdictType, ContestsApi, ProblemsApi, SeriesApi, SubmissionsApi, UsersApi) {
+}(function(ApiClient, ModelsCodingProblem, ModelsContest, ModelsContestResponse, ModelsEUser, ModelsSeries, ModelsSignUpMode, ModelsSubmission, ModelsSubmissionResponse, ModelsSubmissionType, ModelsUser, ModelsUserType, ModelsVerdictType, CodingProblemsApi, ContestsApi, SeriesApi, SubmissionsApi, UsersApi) {
   'use strict';
 
   /**
@@ -62,6 +62,11 @@
      * @property {module:ApiClient}
      */
     ApiClient: ApiClient,
+    /**
+     * The ModelsCodingProblem model constructor.
+     * @property {module:model/ModelsCodingProblem}
+     */
+    ModelsCodingProblem: ModelsCodingProblem,
     /**
      * The ModelsContest model constructor.
      * @property {module:model/ModelsContest}
@@ -118,15 +123,15 @@
      */
     ModelsVerdictType: ModelsVerdictType,
     /**
+     * The CodingProblemsApi service constructor.
+     * @property {module:api/CodingProblemsApi}
+     */
+    CodingProblemsApi: CodingProblemsApi,
+    /**
      * The ContestsApi service constructor.
      * @property {module:api/ContestsApi}
      */
     ContestsApi: ContestsApi,
-    /**
-     * The ProblemsApi service constructor.
-     * @property {module:api/ProblemsApi}
-     */
-    ProblemsApi: ProblemsApi,
     /**
      * The SeriesApi service constructor.
      * @property {module:api/SeriesApi}
