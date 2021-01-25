@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *AhanaApi.SeriesApi* | [**seriesControllerGetAllSeries**](docs/SeriesApi.md#seriesControllerGetAllSeries) | **GET** /series/ | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetSeries**](docs/SeriesApi.md#seriesControllerGetSeries) | **GET** /series/{sid} | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmission**](docs/SubmissionsApi.md#submissionControllerGetSubmission) | **GET** /submissions/{submissionId} | 
+*AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmissionDeadlineByProblem**](docs/SubmissionsApi.md#submissionControllerGetSubmissionDeadlineByProblem) | **GET** /submissions/deadline | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerSubmitCodeSolution**](docs/SubmissionsApi.md#submissionControllerSubmitCodeSolution) | **POST** /submissions/code | 
 *AhanaApi.UsersApi* | [**userControllerCreateUser**](docs/UsersApi.md#userControllerCreateUser) | **POST** /users/ | 
 *AhanaApi.UsersApi* | [**userControllerGetUser**](docs/UsersApi.md#userControllerGetUser) | **GET** /users/{firebaseUid} | 
@@ -137,9 +138,11 @@ Class | Method | HTTP request | Description
  - [AhanaApi.ModelsContest](docs/ModelsContest.md)
  - [AhanaApi.ModelsContestResponse](docs/ModelsContestResponse.md)
  - [AhanaApi.ModelsEUser](docs/ModelsEUser.md)
+ - [AhanaApi.ModelsRSubmissionDeadline](docs/ModelsRSubmissionDeadline.md)
  - [AhanaApi.ModelsSeries](docs/ModelsSeries.md)
  - [AhanaApi.ModelsSignUpMode](docs/ModelsSignUpMode.md)
  - [AhanaApi.ModelsSubmission](docs/ModelsSubmission.md)
+ - [AhanaApi.ModelsSubmissionDeadline](docs/ModelsSubmissionDeadline.md)
  - [AhanaApi.ModelsSubmissionResponse](docs/ModelsSubmissionResponse.md)
  - [AhanaApi.ModelsSubmissionType](docs/ModelsSubmissionType.md)
  - [AhanaApi.ModelsUser](docs/ModelsUser.md)

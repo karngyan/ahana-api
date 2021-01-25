@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsSubmission', 'model/ModelsSubmissionResponse'], factory);
+    define(['ApiClient', 'model/ModelsRSubmissionDeadline', 'model/ModelsSubmission', 'model/ModelsSubmissionResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ModelsSubmission'), require('../model/ModelsSubmissionResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ModelsRSubmissionDeadline'), require('../model/ModelsSubmission'), require('../model/ModelsSubmissionResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.AhanaApi) {
       root.AhanaApi = {};
     }
-    root.AhanaApi.SubmissionsApi = factory(root.AhanaApi.ApiClient, root.AhanaApi.ModelsSubmission, root.AhanaApi.ModelsSubmissionResponse);
+    root.AhanaApi.SubmissionsApi = factory(root.AhanaApi.ApiClient, root.AhanaApi.ModelsRSubmissionDeadline, root.AhanaApi.ModelsSubmission, root.AhanaApi.ModelsSubmissionResponse);
   }
-}(this, function(ApiClient, ModelsSubmission, ModelsSubmissionResponse) {
+}(this, function(ApiClient, ModelsRSubmissionDeadline, ModelsSubmission, ModelsSubmissionResponse) {
   'use strict';
 
   /**
@@ -97,6 +97,60 @@
 
       return this.apiClient.callApi(
         '/submissions/{submissionId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the submissionControllerGetSubmissionDeadlineByProblem operation.
+     * @callback module:api/SubmissionsApi~submissionControllerGetSubmissionDeadlineByProblemCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ModelsRSubmissionDeadline} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * GetSubmissionDeadline for given problem Id for given User
+     * @param {String} xUserApiKey User API Key
+     * @param {Number} pid problem id
+     * @param {module:api/SubmissionsApi~submissionControllerGetSubmissionDeadlineByProblemCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ModelsRSubmissionDeadline}
+     */
+    this.submissionControllerGetSubmissionDeadlineByProblem = function(xUserApiKey, pid, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'xUserApiKey' is set
+      if (xUserApiKey === undefined || xUserApiKey === null) {
+        throw new Error("Missing the required parameter 'xUserApiKey' when calling submissionControllerGetSubmissionDeadlineByProblem");
+      }
+
+      // verify the required parameter 'pid' is set
+      if (pid === undefined || pid === null) {
+        throw new Error("Missing the required parameter 'pid' when calling submissionControllerGetSubmissionDeadlineByProblem");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'pid': pid,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'X-User-ApiKey': xUserApiKey
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ModelsRSubmissionDeadline;
+
+      return this.apiClient.callApi(
+        '/submissions/deadline', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
