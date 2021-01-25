@@ -97,17 +97,19 @@ var AhanaApi = require('ahana_api');
 
 var api = new AhanaApi.CodingProblemsApi()
 
-var problemId = 789; // {Number} the problemId you want to get
+var key = "key_example"; // {String} key
+
+var pid = 789; // {Number} the problem id you want to get
 
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-api.codingProblemControllerGetCodingProblemById(problemId, callback);
+api.codingProblemControllerDownloadInputFile(key, pid, callback);
 
 ```
 
@@ -117,12 +119,13 @@ All URIs are relative to *http://127.0.0.1:8081/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AhanaApi.CodingProblemsApi* | [**codingProblemControllerDownloadInputFile**](docs/CodingProblemsApi.md#codingProblemControllerDownloadInputFile) | **GET** /coding-problems/in/download | 
 *AhanaApi.CodingProblemsApi* | [**codingProblemControllerGetCodingProblemById**](docs/CodingProblemsApi.md#codingProblemControllerGetCodingProblemById) | **GET** /coding-problems/{problemId} | 
 *AhanaApi.CodingProblemsApi* | [**codingProblemControllerGetCodingProblemsByContest**](docs/CodingProblemsApi.md#codingProblemControllerGetCodingProblemsByContest) | **GET** /coding-problems/ | 
-*AhanaApi.CodingProblemsApi* | [**codingProblemControllerGetInputFileAndInitSubmissionDeadline**](docs/CodingProblemsApi.md#codingProblemControllerGetInputFileAndInitSubmissionDeadline) | **GET** /coding-problems/{pid}/input | 
+*AhanaApi.CodingProblemsApi* | [**codingProblemControllerInitSubmissionDeadline**](docs/CodingProblemsApi.md#codingProblemControllerInitSubmissionDeadline) | **POST** /coding-problems/{pid}/init | 
 *AhanaApi.ContestsApi* | [**contestControllerGetContest**](docs/ContestsApi.md#contestControllerGetContest) | **GET** /contests/{contestId} | 
 *AhanaApi.ContestsApi* | [**contestControllerGetContestsBySeries**](docs/ContestsApi.md#contestControllerGetContestsBySeries) | **GET** /contests/ | 
-*AhanaApi.ContestsApi* | [**contestControllerRegisterForContest**](docs/ContestsApi.md#contestControllerRegisterForContest) | **GET** /contests/{contestId}/register | 
+*AhanaApi.ContestsApi* | [**contestControllerRegisterForContest**](docs/ContestsApi.md#contestControllerRegisterForContest) | **POST** /contests/{contestId}/register | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetAllSeries**](docs/SeriesApi.md#seriesControllerGetAllSeries) | **GET** /series/ | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetSeries**](docs/SeriesApi.md#seriesControllerGetSeries) | **GET** /series/{sid} | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmission**](docs/SubmissionsApi.md#submissionControllerGetSubmission) | **GET** /submissions/{submissionId} | 

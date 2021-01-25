@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**contestControllerGetContest**](ContestsApi.md#contestControllerGetContest) | **GET** /contests/{contestId} | 
 [**contestControllerGetContestsBySeries**](ContestsApi.md#contestControllerGetContestsBySeries) | **GET** /contests/ | 
-[**contestControllerRegisterForContest**](ContestsApi.md#contestControllerRegisterForContest) | **GET** /contests/{contestId}/register | 
+[**contestControllerRegisterForContest**](ContestsApi.md#contestControllerRegisterForContest) | **POST** /contests/{contestId}/register | 
 
 
 <a name="contestControllerGetContest"></a>

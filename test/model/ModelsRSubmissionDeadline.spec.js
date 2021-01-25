@@ -47,6 +47,12 @@
         // expect(instance.inputFileDownloaded).to.be(expectedValueLiteral);
       });
 
+      it('should have the property inputFileUrl (base name: "inputFileUrl")', function() {
+        // TODO: update the code to test the property inputFileUrl
+        expect(instance).to.have.property('inputFileUrl');
+        // expect(instance.inputFileUrl).to.be(expectedValueLiteral);
+      });
+
       it('should have the property submissionDeadline (base name: "submissionDeadline")', function() {
         // TODO: update the code to test the property submissionDeadline
         expect(instance).to.have.property('submissionDeadline');

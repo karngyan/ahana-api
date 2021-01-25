@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsCodingProblem'], factory);
+    define(['ApiClient', 'model/ModelsCodingProblem', 'model/ModelsRSubmissionDeadline'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ModelsCodingProblem'));
+    module.exports = factory(require('../ApiClient'), require('../model/ModelsCodingProblem'), require('../model/ModelsRSubmissionDeadline'));
   } else {
     // Browser globals (root is window)
     if (!root.AhanaApi) {
       root.AhanaApi = {};
     }
-    root.AhanaApi.CodingProblemsApi = factory(root.AhanaApi.ApiClient, root.AhanaApi.ModelsCodingProblem);
+    root.AhanaApi.CodingProblemsApi = factory(root.AhanaApi.ApiClient, root.AhanaApi.ModelsCodingProblem, root.AhanaApi.ModelsRSubmissionDeadline);
   }
-}(this, function(ApiClient, ModelsCodingProblem) {
+}(this, function(ApiClient, ModelsCodingProblem, ModelsRSubmissionDeadline) {
   'use strict';
 
   /**
@@ -47,6 +47,59 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+    /**
+     * Callback function to receive the result of the codingProblemControllerDownloadInputFile operation.
+     * @callback module:api/CodingProblemsApi~codingProblemControllerDownloadInputFileCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Input File only if the submission deadline for the user is on
+     * @param {String} key key
+     * @param {Number} pid the problem id you want to get
+     * @param {module:api/CodingProblemsApi~codingProblemControllerDownloadInputFileCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.codingProblemControllerDownloadInputFile = function(key, pid, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling codingProblemControllerDownloadInputFile");
+      }
+
+      // verify the required parameter 'pid' is set
+      if (pid === undefined || pid === null) {
+        throw new Error("Missing the required parameter 'pid' when calling codingProblemControllerDownloadInputFile");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'key': key,
+        'pid': pid,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/coding-problems/in/download', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the codingProblemControllerGetCodingProblemById operation.
@@ -143,10 +196,10 @@
     }
 
     /**
-     * Callback function to receive the result of the codingProblemControllerGetInputFileAndInitSubmissionDeadline operation.
-     * @callback module:api/CodingProblemsApi~codingProblemControllerGetInputFileAndInitSubmissionDeadlineCallback
+     * Callback function to receive the result of the codingProblemControllerInitSubmissionDeadline operation.
+     * @callback module:api/CodingProblemsApi~codingProblemControllerInitSubmissionDeadlineCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/ModelsRSubmissionDeadline} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -154,19 +207,20 @@
      * Get Input File and create a submission deadline for the user
      * @param {String} xUserApiKey User API Key
      * @param {Number} pid the problem id you want to get
-     * @param {module:api/CodingProblemsApi~codingProblemControllerGetInputFileAndInitSubmissionDeadlineCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CodingProblemsApi~codingProblemControllerInitSubmissionDeadlineCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ModelsRSubmissionDeadline}
      */
-    this.codingProblemControllerGetInputFileAndInitSubmissionDeadline = function(xUserApiKey, pid, callback) {
+    this.codingProblemControllerInitSubmissionDeadline = function(xUserApiKey, pid, callback) {
       var postBody = null;
 
       // verify the required parameter 'xUserApiKey' is set
       if (xUserApiKey === undefined || xUserApiKey === null) {
-        throw new Error("Missing the required parameter 'xUserApiKey' when calling codingProblemControllerGetInputFileAndInitSubmissionDeadline");
+        throw new Error("Missing the required parameter 'xUserApiKey' when calling codingProblemControllerInitSubmissionDeadline");
       }
 
       // verify the required parameter 'pid' is set
       if (pid === undefined || pid === null) {
-        throw new Error("Missing the required parameter 'pid' when calling codingProblemControllerGetInputFileAndInitSubmissionDeadline");
+        throw new Error("Missing the required parameter 'pid' when calling codingProblemControllerInitSubmissionDeadline");
       }
 
 
@@ -186,10 +240,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = ModelsRSubmissionDeadline;
 
       return this.apiClient.callApi(
-        '/coding-problems/{pid}/input', 'GET',
+        '/coding-problems/{pid}/init', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

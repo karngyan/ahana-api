@@ -139,6 +139,8 @@
             expect(data).to.be.a(AhanaApi.ModelsRSubmissionDeadline);
             expect(data.inputFileDownloaded).to.be.a('boolean');
             expect(data.inputFileDownloaded).to.be(false);
+            expect(data.inputFileUrl).to.be.a('string');
+            expect(data.inputFileUrl).to.be("");
             expect(data.submissionDeadline).to.be.a(AhanaApi.ModelsSubmissionDeadline);
                   expect(data.submissionDeadline.contest).to.be.a(AhanaApi.ModelsContest);
                     expect(data.submissionDeadline.contest.created).to.be.a('number');

@@ -57,6 +57,8 @@
       obj = obj || new exports();
       if (data.hasOwnProperty('inputFileDownloaded'))
         obj.inputFileDownloaded = ApiClient.convertToType(data['inputFileDownloaded'], 'Boolean');
+      if (data.hasOwnProperty('inputFileUrl'))
+        obj.inputFileUrl = ApiClient.convertToType(data['inputFileUrl'], 'String');
       if (data.hasOwnProperty('submissionDeadline'))
         obj.submissionDeadline = ModelsSubmissionDeadline.constructFromObject(data['submissionDeadline']);
     }
@@ -67,6 +69,11 @@
    * @member {Boolean} inputFileDownloaded
    */
   exports.prototype.inputFileDownloaded = undefined;
+
+  /**
+   * @member {String} inputFileUrl
+   */
+  exports.prototype.inputFileUrl = undefined;
 
   /**
    * @member {module:model/ModelsSubmissionDeadline} submissionDeadline

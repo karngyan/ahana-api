@@ -196,7 +196,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/contests/{contestId}/register', 'GET',
+        '/contests/{contestId}/register', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
