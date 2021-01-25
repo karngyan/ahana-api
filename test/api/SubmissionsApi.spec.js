@@ -40,9 +40,10 @@
         it('should call submissionControllerGetSubmission successfully', function(done) {
           // TODO: uncomment, update parameter values for submissionControllerGetSubmission call and complete the assertions
           /*
+          var xUserApiKey = "xUserApiKey_example";
           var submissionId = 789;
 
-          instance.submissionControllerGetSubmission(submissionId, function(error, data, response) {
+          instance.submissionControllerGetSubmission(xUserApiKey, submissionId, function(error, data, response) {
             if (error) {
               done(error);
               return;

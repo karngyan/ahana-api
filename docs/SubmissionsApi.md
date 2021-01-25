@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="submissionControllerGetSubmission"></a>
 # **submissionControllerGetSubmission**
-> ModelsSubmission submissionControllerGetSubmission(submissionId)
+> ModelsSubmission submissionControllerGetSubmission(xUserApiKey, submissionId)
 
 
 
@@ -22,6 +22,8 @@ var AhanaApi = require('ahana_api');
 
 var apiInstance = new AhanaApi.SubmissionsApi();
 
+var xUserApiKey = "xUserApiKey_example"; // String | User API Key
+
 var submissionId = 789; // Number | the submission you want to get
 
 
@@ -32,13 +34,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.submissionControllerGetSubmission(submissionId, callback);
+apiInstance.submissionControllerGetSubmission(xUserApiKey, submissionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xUserApiKey** | **String**| User API Key | 
  **submissionId** | **Number**| the submission you want to get | 
 
 ### Return type

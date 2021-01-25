@@ -58,12 +58,18 @@
 
     /**
      * Get Submission by id
+     * @param {String} xUserApiKey User API Key
      * @param {Number} submissionId the submission you want to get
      * @param {module:api/SubmissionsApi~submissionControllerGetSubmissionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelsSubmission}
      */
-    this.submissionControllerGetSubmission = function(submissionId, callback) {
+    this.submissionControllerGetSubmission = function(xUserApiKey, submissionId, callback) {
       var postBody = null;
+
+      // verify the required parameter 'xUserApiKey' is set
+      if (xUserApiKey === undefined || xUserApiKey === null) {
+        throw new Error("Missing the required parameter 'xUserApiKey' when calling submissionControllerGetSubmission");
+      }
 
       // verify the required parameter 'submissionId' is set
       if (submissionId === undefined || submissionId === null) {
@@ -79,6 +85,7 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'X-User-ApiKey': xUserApiKey
       };
       var formParams = {
       };
