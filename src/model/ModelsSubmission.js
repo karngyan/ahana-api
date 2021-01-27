@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsCodingProblem', 'model/ModelsContest', 'model/ModelsMcqProblem', 'model/ModelsSubmissionType', 'model/ModelsVerdictType'], factory);
+    define(['ApiClient', 'model/ModelsCodingProblem', 'model/ModelsContest', 'model/ModelsSubmissionType', 'model/ModelsVerdictType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ModelsCodingProblem'), require('./ModelsContest'), require('./ModelsMcqProblem'), require('./ModelsSubmissionType'), require('./ModelsVerdictType'));
+    module.exports = factory(require('../ApiClient'), require('./ModelsCodingProblem'), require('./ModelsContest'), require('./ModelsSubmissionType'), require('./ModelsVerdictType'));
   } else {
     // Browser globals (root is window)
     if (!root.AhanaApi) {
       root.AhanaApi = {};
     }
-    root.AhanaApi.ModelsSubmission = factory(root.AhanaApi.ApiClient, root.AhanaApi.ModelsCodingProblem, root.AhanaApi.ModelsContest, root.AhanaApi.ModelsMcqProblem, root.AhanaApi.ModelsSubmissionType, root.AhanaApi.ModelsVerdictType);
+    root.AhanaApi.ModelsSubmission = factory(root.AhanaApi.ApiClient, root.AhanaApi.ModelsCodingProblem, root.AhanaApi.ModelsContest, root.AhanaApi.ModelsSubmissionType, root.AhanaApi.ModelsVerdictType);
   }
-}(this, function(ApiClient, ModelsCodingProblem, ModelsContest, ModelsMcqProblem, ModelsSubmissionType, ModelsVerdictType) {
+}(this, function(ApiClient, ModelsCodingProblem, ModelsContest, ModelsSubmissionType, ModelsVerdictType) {
   'use strict';
 
   /**
@@ -55,16 +55,14 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('codingProblem'))
-        obj.codingProblem = ModelsCodingProblem.constructFromObject(data['codingProblem']);
       if (data.hasOwnProperty('contest'))
         obj.contest = ModelsContest.constructFromObject(data['contest']);
       if (data.hasOwnProperty('created'))
         obj.created = ApiClient.convertToType(data['created'], 'Number');
       if (data.hasOwnProperty('id'))
         obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('mcqProblem'))
-        obj.mcqProblem = ModelsMcqProblem.constructFromObject(data['mcqProblem']);
+      if (data.hasOwnProperty('problem'))
+        obj.problem = ModelsCodingProblem.constructFromObject(data['problem']);
       if (data.hasOwnProperty('type'))
         obj.type = ModelsSubmissionType.constructFromObject(data['type']);
       if (data.hasOwnProperty('updated'))
@@ -74,11 +72,6 @@
     }
     return obj;
   }
-
-  /**
-   * @member {module:model/ModelsCodingProblem} codingProblem
-   */
-  exports.prototype.codingProblem = undefined;
 
   /**
    * @member {module:model/ModelsContest} contest
@@ -96,9 +89,9 @@
   exports.prototype.id = undefined;
 
   /**
-   * @member {module:model/ModelsMcqProblem} mcqProblem
+   * @member {module:model/ModelsCodingProblem} problem
    */
-  exports.prototype.mcqProblem = undefined;
+  exports.prototype.problem = undefined;
 
   /**
    * @member {module:model/ModelsSubmissionType} type

@@ -41,12 +41,6 @@
         expect(instance).to.be.a(AhanaApi.ModelsSubmission);
       });
 
-      it('should have the property codingProblem (base name: "codingProblem")', function() {
-        // TODO: update the code to test the property codingProblem
-        expect(instance).to.have.property('codingProblem');
-        // expect(instance.codingProblem).to.be(expectedValueLiteral);
-      });
-
       it('should have the property contest (base name: "contest")', function() {
         // TODO: update the code to test the property contest
         expect(instance).to.have.property('contest');
@@ -65,10 +59,10 @@
         // expect(instance.id).to.be(expectedValueLiteral);
       });
 
-      it('should have the property mcqProblem (base name: "mcqProblem")', function() {
-        // TODO: update the code to test the property mcqProblem
-        expect(instance).to.have.property('mcqProblem');
-        // expect(instance.mcqProblem).to.be(expectedValueLiteral);
+      it('should have the property problem (base name: "problem")', function() {
+        // TODO: update the code to test the property problem
+        expect(instance).to.have.property('problem');
+        // expect(instance.problem).to.be(expectedValueLiteral);
       });
 
       it('should have the property type (base name: "type")', function() {
