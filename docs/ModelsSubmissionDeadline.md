@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **problem** | [**ModelsCodingProblem**](ModelsCodingProblem.md) |  | [optional] 
 **updated** | **Number** |  | [optional] 
 **user** | [**ModelsUser**](ModelsUser.md) |  | [optional] 
-
-

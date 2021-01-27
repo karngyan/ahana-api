@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new AhanaApi.SeriesApi();
+    instance = new AhanaApi.Body();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,27 +46,25 @@
       object[property] = value;
   }
 
-  describe('SeriesApi', function() {
-    describe('seriesControllerGetAllSeries', function() {
-      it('should call seriesControllerGetAllSeries successfully', function(done) {
-        //uncomment below and update the code to test seriesControllerGetAllSeries
-        //instance.seriesControllerGetAllSeries(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('Body', function() {
+    it('should create an instance of Body', function() {
+      // uncomment below and update the code to test Body
+      //var instane = new AhanaApi.Body();
+      //expect(instance).to.be.a(AhanaApi.Body);
     });
-    describe('seriesControllerGetSeries', function() {
-      it('should call seriesControllerGetSeries successfully', function(done) {
-        //uncomment below and update the code to test seriesControllerGetSeries
-        //instance.seriesControllerGetSeries(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property sfile (base name: "sfile")', function() {
+      // uncomment below and update the code to test the property sfile
+      //var instane = new AhanaApi.Body();
+      //expect(instance).to.be();
     });
+
+    it('should have the property cfile (base name: "cfile")', function() {
+      // uncomment below and update the code to test the property cfile
+      //var instane = new AhanaApi.Body();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

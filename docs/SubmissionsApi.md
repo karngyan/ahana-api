@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**submissionControllerGetSubmissionDeadlineByProblem**](SubmissionsApi.md#submissionControllerGetSubmissionDeadlineByProblem) | **GET** /submissions/deadline | 
 [**submissionControllerSubmitCodeSolution**](SubmissionsApi.md#submissionControllerSubmitCodeSolution) | **POST** /submissions/code | 
 
-
 <a name="submissionControllerGetAllUserSubmissionsByContest"></a>
 # **submissionControllerGetAllUserSubmissionsByContest**
 > [ModelsSubmission] submissionControllerGetAllUserSubmissionsByContest(xUserApiKey, cid)
@@ -20,23 +19,19 @@ Get All User Submissions By Contest Id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.SubmissionsApi();
+let apiInstance = new AhanaApi.SubmissionsApi();
+let xUserApiKey = "xUserApiKey_example"; // String | the User API Key
+let cid = 789; // Number | contest id
 
-var xUserApiKey = "xUserApiKey_example"; // String | the User API Key
-
-var cid = 789; // Number | contest id
-
-
-var callback = function(error, data, response) {
+apiInstance.submissionControllerGetAllUserSubmissionsByContest(xUserApiKey, cid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.submissionControllerGetAllUserSubmissionsByContest(xUserApiKey, cid, callback);
+});
 ```
 
 ### Parameters
@@ -56,7 +51,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="submissionControllerGetSubmission"></a>
@@ -69,23 +64,19 @@ Get Submission by id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.SubmissionsApi();
+let apiInstance = new AhanaApi.SubmissionsApi();
+let xUserApiKey = "xUserApiKey_example"; // String | User API Key
+let submissionId = 789; // Number | the submission you want to get
 
-var xUserApiKey = "xUserApiKey_example"; // String | User API Key
-
-var submissionId = 789; // Number | the submission you want to get
-
-
-var callback = function(error, data, response) {
+apiInstance.submissionControllerGetSubmission(xUserApiKey, submissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.submissionControllerGetSubmission(xUserApiKey, submissionId, callback);
+});
 ```
 
 ### Parameters
@@ -105,7 +96,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="submissionControllerGetSubmissionDeadlineByProblem"></a>
@@ -118,23 +109,19 @@ GetSubmissionDeadline for given problem Id for given User
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.SubmissionsApi();
+let apiInstance = new AhanaApi.SubmissionsApi();
+let xUserApiKey = "xUserApiKey_example"; // String | User API Key
+let pid = 789; // Number | problem id
 
-var xUserApiKey = "xUserApiKey_example"; // String | User API Key
-
-var pid = 789; // Number | problem id
-
-
-var callback = function(error, data, response) {
+apiInstance.submissionControllerGetSubmissionDeadlineByProblem(xUserApiKey, pid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.submissionControllerGetSubmissionDeadlineByProblem(xUserApiKey, pid, callback);
+});
 ```
 
 ### Parameters
@@ -154,12 +141,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="submissionControllerSubmitCodeSolution"></a>
 # **submissionControllerSubmitCodeSolution**
-> ModelsSubmissionResponse submissionControllerSubmitCodeSolution(xUserApiKey, contestId, problemId, sfile, cfile)
+> ModelsSubmissionResponse submissionControllerSubmitCodeSolution(sfilecfilexUserApiKeycontestIdproblemId)
 
 
 
@@ -167,40 +154,33 @@ Output Submission - Checks if output file matches output
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.SubmissionsApi();
+let apiInstance = new AhanaApi.SubmissionsApi();
+let sfile = "sfile_example"; // File | 
+let cfile = "cfile_example"; // File | 
+let xUserApiKey = "xUserApiKey_example"; // String | User API Key
+let contestId = 789; // Number | contest id
+let problemId = 789; // Number | problem id
 
-var xUserApiKey = "xUserApiKey_example"; // String | User API Key
-
-var contestId = 789; // Number | contest id
-
-var problemId = 789; // Number | problem id
-
-var sfile = "/path/to/file.txt"; // File | form data output file
-
-var cfile = "/path/to/file.txt"; // File | form data source code file
-
-
-var callback = function(error, data, response) {
+apiInstance.submissionControllerSubmitCodeSolution(sfilecfilexUserApiKeycontestIdproblemId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.submissionControllerSubmitCodeSolution(xUserApiKey, contestId, problemId, sfile, cfile, callback);
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sfile** | **File**|  | 
+ **cfile** | **File**|  | 
  **xUserApiKey** | **String**| User API Key | 
  **contestId** | **Number**| contest id | 
  **problemId** | **Number**| problem id | 
- **sfile** | **File**| form data output file | 
- **cfile** | **File**| form data source code file | 
 
 ### Return type
 

@@ -9,5 +9,3 @@ Name | Type | Description | Notes
 **logoUrl** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **updated** | **Number** |  | [optional] 
-
-

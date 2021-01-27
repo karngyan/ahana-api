@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **series** | [**ModelsSeries**](ModelsSeries.md) |  | [optional] 
 **start** | **Number** |  | [optional] 
 **updated** | **Number** |  | [optional] 
-
-

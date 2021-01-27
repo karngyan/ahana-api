@@ -18,5 +18,3 @@ Name | Type | Description | Notes
 **tSize** | **String** |  | [optional] 
 **type** | [**ModelsUserType**](ModelsUserType.md) |  | [optional] 
 **updated** | **Number** |  | [optional] 
-
-

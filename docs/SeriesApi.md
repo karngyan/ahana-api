@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**seriesControllerGetAllSeries**](SeriesApi.md#seriesControllerGetAllSeries) | **GET** /series/ | 
 [**seriesControllerGetSeries**](SeriesApi.md#seriesControllerGetSeries) | **GET** /series/{sid} | 
 
-
 <a name="seriesControllerGetAllSeries"></a>
 # **seriesControllerGetAllSeries**
 > [ModelsSeries] seriesControllerGetAllSeries()
@@ -18,18 +17,16 @@ Get All Series
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.SeriesApi();
-
-var callback = function(error, data, response) {
+let apiInstance = new AhanaApi.SeriesApi();
+apiInstance.seriesControllerGetAllSeries((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.seriesControllerGetAllSeries(callback);
+});
 ```
 
 ### Parameters
@@ -45,7 +42,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="seriesControllerGetSeries"></a>
@@ -58,21 +55,18 @@ Get Series by id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.SeriesApi();
+let apiInstance = new AhanaApi.SeriesApi();
+let sid = 789; // Number | the sid you want to get
 
-var sid = 789; // Number | the sid you want to get
-
-
-var callback = function(error, data, response) {
+apiInstance.seriesControllerGetSeries(sid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.seriesControllerGetSeries(sid, callback);
+});
 ```
 
 ### Parameters
@@ -91,6 +85,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

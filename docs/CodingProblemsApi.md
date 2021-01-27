@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**codingProblemControllerGetCodingProblemsByContest**](CodingProblemsApi.md#codingProblemControllerGetCodingProblemsByContest) | **GET** /coding-problems/ | 
 [**codingProblemControllerInitSubmissionDeadline**](CodingProblemsApi.md#codingProblemControllerInitSubmissionDeadline) | **POST** /coding-problems/{pid}/init | 
 
-
 <a name="codingProblemControllerDownloadInputFile"></a>
 # **codingProblemControllerDownloadInputFile**
 > codingProblemControllerDownloadInputFile(key, pid)
@@ -20,23 +19,19 @@ Get Input File only if the submission deadline for the user is on or the contest
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.CodingProblemsApi();
+let apiInstance = new AhanaApi.CodingProblemsApi();
+let key = "key_example"; // String | key
+let pid = 789; // Number | the problem id you want to get
 
-var key = "key_example"; // String | key
-
-var pid = 789; // Number | the problem id you want to get
-
-
-var callback = function(error, data, response) {
+apiInstance.codingProblemControllerDownloadInputFile(key, pid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.codingProblemControllerDownloadInputFile(key, pid, callback);
+});
 ```
 
 ### Parameters
@@ -56,8 +51,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="codingProblemControllerGetCodingProblemById"></a>
 # **codingProblemControllerGetCodingProblemById**
@@ -69,21 +64,18 @@ Get CodingProblem by Id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.CodingProblemsApi();
+let apiInstance = new AhanaApi.CodingProblemsApi();
+let problemId = 789; // Number | the problemId you want to get
 
-var problemId = 789; // Number | the problemId you want to get
-
-
-var callback = function(error, data, response) {
+apiInstance.codingProblemControllerGetCodingProblemById(problemId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.codingProblemControllerGetCodingProblemById(problemId, callback);
+});
 ```
 
 ### Parameters
@@ -102,7 +94,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="codingProblemControllerGetCodingProblemsByContest"></a>
@@ -115,21 +107,18 @@ Get All CodingProblems By Contest Id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.CodingProblemsApi();
+let apiInstance = new AhanaApi.CodingProblemsApi();
+let cid = 789; // Number | contest id
 
-var cid = 789; // Number | contest id
-
-
-var callback = function(error, data, response) {
+apiInstance.codingProblemControllerGetCodingProblemsByContest(cid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.codingProblemControllerGetCodingProblemsByContest(cid, callback);
+});
 ```
 
 ### Parameters
@@ -148,7 +137,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="codingProblemControllerInitSubmissionDeadline"></a>
@@ -161,23 +150,19 @@ Get Input File and create a submission deadline for the user
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.CodingProblemsApi();
+let apiInstance = new AhanaApi.CodingProblemsApi();
+let xUserApiKey = "xUserApiKey_example"; // String | User API Key
+let pid = 789; // Number | the problem id you want to get
 
-var xUserApiKey = "xUserApiKey_example"; // String | User API Key
-
-var pid = 789; // Number | the problem id you want to get
-
-
-var callback = function(error, data, response) {
+apiInstance.codingProblemControllerInitSubmissionDeadline(xUserApiKey, pid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.codingProblemControllerInitSubmissionDeadline(xUserApiKey, pid, callback);
+});
 ```
 
 ### Parameters
@@ -197,6 +182,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

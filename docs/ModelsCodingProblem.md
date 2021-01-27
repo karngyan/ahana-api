@@ -17,5 +17,3 @@ Name | Type | Description | Notes
 **sampleOutput** | **String** |  | [optional] 
 **statement** | **String** |  | [optional] 
 **updated** | **Number** |  | [optional] 
-
-

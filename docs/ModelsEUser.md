@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **signUpMode** | **String** |  | [optional] 
 **token** | **String** |  | [optional] 
 **uid** | **String** |  | [optional] 
-
-

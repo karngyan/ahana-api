@@ -7,10 +7,9 @@ Method | HTTP request | Description
 [**userControllerCreateUser**](UsersApi.md#userControllerCreateUser) | **POST** /users/ | 
 [**userControllerGetUser**](UsersApi.md#userControllerGetUser) | **GET** /users/{firebaseUid} | 
 
-
 <a name="userControllerCreateUser"></a>
 # **userControllerCreateUser**
-> ModelsUser userControllerCreateUser(body, xToken)
+> ModelsUser userControllerCreateUser(bodyxToken)
 
 
 
@@ -18,23 +17,19 @@ Create New User
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.UsersApi();
+let apiInstance = new AhanaApi.UsersApi();
+let body = new AhanaApi.ModelsEUser(); // ModelsEUser | User details
+let xToken = "xToken_example"; // String | Firebase token
 
-var body = new AhanaApi.ModelsEUser(); // ModelsEUser | User details
-
-var xToken = "xToken_example"; // String | Firebase token
-
-
-var callback = function(error, data, response) {
+apiInstance.userControllerCreateUser(bodyxToken, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.userControllerCreateUser(body, xToken, callback);
+});
 ```
 
 ### Parameters
@@ -67,23 +62,19 @@ Get Existing User
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.UsersApi();
+let apiInstance = new AhanaApi.UsersApi();
+let xToken = "xToken_example"; // String | Firebase token
+let firebaseUid = "firebaseUid_example"; // String | the firebase uid of the user you need to fetch
 
-var xToken = "xToken_example"; // String | Firebase token
-
-var firebaseUid = "firebaseUid_example"; // String | the firebase uid of the user you need to fetch
-
-
-var callback = function(error, data, response) {
+apiInstance.userControllerGetUser(xToken, firebaseUid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.userControllerGetUser(xToken, firebaseUid, callback);
+});
 ```
 
 ### Parameters
@@ -103,6 +94,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

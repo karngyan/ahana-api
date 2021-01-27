@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**contestControllerGetContestsBySeries**](ContestsApi.md#contestControllerGetContestsBySeries) | **GET** /contests/ | 
 [**contestControllerRegisterForContest**](ContestsApi.md#contestControllerRegisterForContest) | **POST** /contests/{contestId}/register | 
 
-
 <a name="contestControllerGetContest"></a>
 # **contestControllerGetContest**
 > ModelsContestResponse contestControllerGetContest(xUserApiKey, contestId)
@@ -19,23 +18,19 @@ Get Contest by id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.ContestsApi();
+let apiInstance = new AhanaApi.ContestsApi();
+let xUserApiKey = "xUserApiKey_example"; // String | User API Key
+let contestId = 789; // Number | the ContestId you want to get
 
-var xUserApiKey = "xUserApiKey_example"; // String | User API Key
-
-var contestId = 789; // Number | the ContestId you want to get
-
-
-var callback = function(error, data, response) {
+apiInstance.contestControllerGetContest(xUserApiKey, contestId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.contestControllerGetContest(xUserApiKey, contestId, callback);
+});
 ```
 
 ### Parameters
@@ -55,7 +50,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="contestControllerGetContestsBySeries"></a>
@@ -68,21 +63,18 @@ Get All Contests By Series Id
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.ContestsApi();
+let apiInstance = new AhanaApi.ContestsApi();
+let sid = 789; // Number | series id
 
-var sid = 789; // Number | series id
-
-
-var callback = function(error, data, response) {
+apiInstance.contestControllerGetContestsBySeries(sid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.contestControllerGetContestsBySeries(sid, callback);
+});
 ```
 
 ### Parameters
@@ -101,7 +93,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="contestControllerRegisterForContest"></a>
@@ -114,23 +106,19 @@ Register for an upcoming contest
 
 ### Example
 ```javascript
-var AhanaApi = require('ahana_api');
+import AhanaApi from 'ahana_api';
 
-var apiInstance = new AhanaApi.ContestsApi();
+let apiInstance = new AhanaApi.ContestsApi();
+let xUserApiKey = "xUserApiKey_example"; // String | User API Key
+let contestId = 789; // Number | the contest id you want to register for
 
-var xUserApiKey = "xUserApiKey_example"; // String | User API Key
-
-var contestId = 789; // Number | the contest id you want to register for
-
-
-var callback = function(error, data, response) {
+apiInstance.contestControllerRegisterForContest(xUserApiKey, contestId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.contestControllerRegisterForContest(xUserApiKey, contestId, callback);
+});
 ```
 
 ### Parameters
@@ -150,6 +138,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 

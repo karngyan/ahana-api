@@ -10,5 +10,3 @@ Name | Type | Description | Notes
 **type** | [**ModelsSubmissionType**](ModelsSubmissionType.md) |  | [optional] 
 **updated** | **Number** |  | [optional] 
 **verdict** | [**ModelsVerdictType**](ModelsVerdictType.md) |  | [optional] 
-
-
