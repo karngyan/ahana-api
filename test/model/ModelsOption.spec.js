@@ -31,26 +31,14 @@
   var instance;
 
   describe('(package)', function() {
-    describe('ModelsSubmission', function() {
+    describe('ModelsOption', function() {
       beforeEach(function() {
-        instance = new AhanaApi.ModelsSubmission();
+        instance = new AhanaApi.ModelsOption();
       });
 
-      it('should create an instance of ModelsSubmission', function() {
-        // TODO: update the code to test ModelsSubmission
-        expect(instance).to.be.a(AhanaApi.ModelsSubmission);
-      });
-
-      it('should have the property codingProblem (base name: "codingProblem")', function() {
-        // TODO: update the code to test the property codingProblem
-        expect(instance).to.have.property('codingProblem');
-        // expect(instance.codingProblem).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property contest (base name: "contest")', function() {
-        // TODO: update the code to test the property contest
-        expect(instance).to.have.property('contest');
-        // expect(instance.contest).to.be(expectedValueLiteral);
+      it('should create an instance of ModelsOption', function() {
+        // TODO: update the code to test ModelsOption
+        expect(instance).to.be.a(AhanaApi.ModelsOption);
       });
 
       it('should have the property created (base name: "created")', function() {
@@ -71,22 +59,16 @@
         // expect(instance.mcqProblem).to.be(expectedValueLiteral);
       });
 
-      it('should have the property type (base name: "type")', function() {
-        // TODO: update the code to test the property type
-        expect(instance).to.have.property('type');
-        // expect(instance.type).to.be(expectedValueLiteral);
+      it('should have the property typeText (base name: "type(text)")', function() {
+        // TODO: update the code to test the property typeText
+        expect(instance).to.have.property('typeText');
+        // expect(instance.typeText).to.be(expectedValueLiteral);
       });
 
       it('should have the property updated (base name: "updated")', function() {
         // TODO: update the code to test the property updated
         expect(instance).to.have.property('updated');
         // expect(instance.updated).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property verdict (base name: "verdict")', function() {
-        // TODO: update the code to test the property verdict
-        expect(instance).to.have.property('verdict');
-        // expect(instance.verdict).to.be(expectedValueLiteral);
       });
 
     });

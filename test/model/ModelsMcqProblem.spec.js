@@ -31,20 +31,14 @@
   var instance;
 
   describe('(package)', function() {
-    describe('ModelsSubmission', function() {
+    describe('ModelsMcqProblem', function() {
       beforeEach(function() {
-        instance = new AhanaApi.ModelsSubmission();
+        instance = new AhanaApi.ModelsMcqProblem();
       });
 
-      it('should create an instance of ModelsSubmission', function() {
-        // TODO: update the code to test ModelsSubmission
-        expect(instance).to.be.a(AhanaApi.ModelsSubmission);
-      });
-
-      it('should have the property codingProblem (base name: "codingProblem")', function() {
-        // TODO: update the code to test the property codingProblem
-        expect(instance).to.have.property('codingProblem');
-        // expect(instance.codingProblem).to.be(expectedValueLiteral);
+      it('should create an instance of ModelsMcqProblem', function() {
+        // TODO: update the code to test ModelsMcqProblem
+        expect(instance).to.be.a(AhanaApi.ModelsMcqProblem);
       });
 
       it('should have the property contest (base name: "contest")', function() {
@@ -65,10 +59,28 @@
         // expect(instance.id).to.be(expectedValueLiteral);
       });
 
-      it('should have the property mcqProblem (base name: "mcqProblem")', function() {
-        // TODO: update the code to test the property mcqProblem
-        expect(instance).to.have.property('mcqProblem');
-        // expect(instance.mcqProblem).to.be(expectedValueLiteral);
+      it('should have the property imageUrl (base name: "imageUrl")', function() {
+        // TODO: update the code to test the property imageUrl
+        expect(instance).to.have.property('imageUrl');
+        // expect(instance.imageUrl).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property maxScore (base name: "maxScore")', function() {
+        // TODO: update the code to test the property maxScore
+        expect(instance).to.have.property('maxScore');
+        // expect(instance.maxScore).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property options (base name: "options")', function() {
+        // TODO: update the code to test the property options
+        expect(instance).to.have.property('options');
+        // expect(instance.options).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property question (base name: "question")', function() {
+        // TODO: update the code to test the property question
+        expect(instance).to.have.property('question');
+        // expect(instance.question).to.be(expectedValueLiteral);
       });
 
       it('should have the property type (base name: "type")', function() {
@@ -81,12 +93,6 @@
         // TODO: update the code to test the property updated
         expect(instance).to.have.property('updated');
         // expect(instance.updated).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property verdict (base name: "verdict")', function() {
-        // TODO: update the code to test the property verdict
-        expect(instance).to.have.property('verdict');
-        // expect(instance.verdict).to.be(expectedValueLiteral);
       });
 
     });
