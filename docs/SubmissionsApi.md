@@ -4,10 +4,60 @@ All URIs are relative to *http://127.0.0.1:8081/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**submissionControllerGetAllUserSubmissionsByContest**](SubmissionsApi.md#submissionControllerGetAllUserSubmissionsByContest) | **GET** /submissions/ | 
 [**submissionControllerGetSubmission**](SubmissionsApi.md#submissionControllerGetSubmission) | **GET** /submissions/{submissionId} | 
 [**submissionControllerGetSubmissionDeadlineByProblem**](SubmissionsApi.md#submissionControllerGetSubmissionDeadlineByProblem) | **GET** /submissions/deadline | 
 [**submissionControllerSubmitCodeSolution**](SubmissionsApi.md#submissionControllerSubmitCodeSolution) | **POST** /submissions/code | 
 
+
+<a name="submissionControllerGetAllUserSubmissionsByContest"></a>
+# **submissionControllerGetAllUserSubmissionsByContest**
+> [ModelsSubmission] submissionControllerGetAllUserSubmissionsByContest(xUserApiKey, cid)
+
+
+
+Get All User Submissions By Contest Id
+
+### Example
+```javascript
+var AhanaApi = require('ahana_api');
+
+var apiInstance = new AhanaApi.SubmissionsApi();
+
+var xUserApiKey = "xUserApiKey_example"; // String | the User API Key
+
+var cid = 789; // Number | contest id
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.submissionControllerGetAllUserSubmissionsByContest(xUserApiKey, cid, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xUserApiKey** | **String**| the User API Key | 
+ **cid** | **Number**| contest id | 
+
+### Return type
+
+[**[ModelsSubmission]**](ModelsSubmission.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="submissionControllerGetSubmission"></a>
 # **submissionControllerGetSubmission**

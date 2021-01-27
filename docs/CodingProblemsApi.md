@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Get Input File only if the submission deadline for the user is on
+Get Input File only if the submission deadline for the user is on or the contest ended
 
 ### Example
 ```javascript

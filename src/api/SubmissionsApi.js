@@ -49,6 +49,60 @@
 
 
     /**
+     * Callback function to receive the result of the submissionControllerGetAllUserSubmissionsByContest operation.
+     * @callback module:api/SubmissionsApi~submissionControllerGetAllUserSubmissionsByContestCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ModelsSubmission>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get All User Submissions By Contest Id
+     * @param {String} xUserApiKey the User API Key
+     * @param {Number} cid contest id
+     * @param {module:api/SubmissionsApi~submissionControllerGetAllUserSubmissionsByContestCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ModelsSubmission>}
+     */
+    this.submissionControllerGetAllUserSubmissionsByContest = function(xUserApiKey, cid, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'xUserApiKey' is set
+      if (xUserApiKey === undefined || xUserApiKey === null) {
+        throw new Error("Missing the required parameter 'xUserApiKey' when calling submissionControllerGetAllUserSubmissionsByContest");
+      }
+
+      // verify the required parameter 'cid' is set
+      if (cid === undefined || cid === null) {
+        throw new Error("Missing the required parameter 'cid' when calling submissionControllerGetAllUserSubmissionsByContest");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'cid': cid,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'X-User-ApiKey': xUserApiKey
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [ModelsSubmission];
+
+      return this.apiClient.callApi(
+        '/submissions/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the submissionControllerGetSubmission operation.
      * @callback module:api/SubmissionsApi~submissionControllerGetSubmissionCallback
      * @param {String} error Error message, if any.

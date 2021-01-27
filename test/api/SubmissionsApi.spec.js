@@ -36,6 +36,100 @@
 
   describe('(package)', function() {
     describe('SubmissionsApi', function() {
+      describe('submissionControllerGetAllUserSubmissionsByContest', function() {
+        it('should call submissionControllerGetAllUserSubmissionsByContest successfully', function(done) {
+          // TODO: uncomment, update parameter values for submissionControllerGetAllUserSubmissionsByContest call and complete the assertions
+          /*
+          var xUserApiKey = "xUserApiKey_example";
+          var cid = 789;
+
+          instance.submissionControllerGetAllUserSubmissionsByContest(xUserApiKey, cid, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            let dataCtr = data;
+            expect(dataCtr).to.be.an(Array);
+            expect(dataCtr).to.not.be.empty();
+            for (let p in dataCtr) {
+              let data = dataCtr[p];
+              expect(data).to.be.a(AhanaApi.ModelsSubmission);
+              expect(data.contest).to.be.a(AhanaApi.ModelsContest);
+                    expect(data.contest.created).to.be.a('number');
+                expect(data.contest.created).to.be("0");
+                expect(data.contest.description).to.be.a('string');
+                expect(data.contest.description).to.be("");
+                expect(data.contest.duration).to.be.a('number');
+                expect(data.contest.duration).to.be("0");
+                expect(data.contest.id).to.be.a('number');
+                expect(data.contest.id).to.be("0");
+                expect(data.contest.name).to.be.a('string');
+                expect(data.contest.name).to.be("");
+                expect(data.contest.organizer).to.be.a(AhanaApi.ModelsUser);
+                      expect(data.contest.organizer.apiKey).to.be.a('string');
+                  expect(data.contest.organizer.apiKey).to.be("");
+                  expect(data.contest.organizer.created).to.be.a('number');
+                  expect(data.contest.organizer.created).to.be("0");
+                  expect(data.contest.organizer.email).to.be.a('string');
+                  expect(data.contest.organizer.email).to.be("");
+                  expect(data.contest.organizer.emailNotificationEnabled).to.be.a('boolean');
+                  expect(data.contest.organizer.emailNotificationEnabled).to.be(false);
+                  expect(data.contest.organizer.firebaseUID).to.be.a('string');
+                  expect(data.contest.organizer.firebaseUID).to.be("");
+                  expect(data.contest.organizer.handle).to.be.a('string');
+                  expect(data.contest.organizer.handle).to.be("");
+                  expect(data.contest.organizer.id).to.be.a('number');
+                  expect(data.contest.organizer.id).to.be("0");
+                  expect(data.contest.organizer.isLocked).to.be.a('boolean');
+                  expect(data.contest.organizer.isLocked).to.be(false);
+                  expect(data.contest.organizer.name).to.be.a('string');
+                  expect(data.contest.organizer.name).to.be("");
+                  expect(data.contest.organizer.phoneNumber).to.be.a('string');
+                  expect(data.contest.organizer.phoneNumber).to.be("");
+                  expect(data.contest.organizer.rating).to.be.a('number');
+                  expect(data.contest.organizer.rating).to.be("0");
+                  expect(data.contest.organizer.signUpMode).to.be.a(AhanaApi.ModelsSignUpMode);
+                      expect(data.contest.organizer.tSize).to.be.a('string');
+                  expect(data.contest.organizer.tSize).to.be("");
+                  expect(data.contest.organizer.type).to.be.a(AhanaApi.ModelsUserType);
+                      expect(data.contest.organizer.updated).to.be.a('number');
+                  expect(data.contest.organizer.updated).to.be("0");
+                expect(data.contest.series).to.be.a(AhanaApi.ModelsSeries);
+                      expect(data.contest.series.created).to.be.a('number');
+                  expect(data.contest.series.created).to.be("0");
+                  expect(data.contest.series.description).to.be.a('string');
+                  expect(data.contest.series.description).to.be("");
+                  expect(data.contest.series.id).to.be.a('number');
+                  expect(data.contest.series.id).to.be("0");
+                  expect(data.contest.series.logoUrl).to.be.a('string');
+                  expect(data.contest.series.logoUrl).to.be("");
+                  expect(data.contest.series.name).to.be.a('string');
+                  expect(data.contest.series.name).to.be("");
+                  expect(data.contest.series.updated).to.be.a('number');
+                  expect(data.contest.series.updated).to.be("0");
+                expect(data.contest.start).to.be.a('number');
+                expect(data.contest.start).to.be("0");
+                expect(data.contest.updated).to.be.a('number');
+                expect(data.contest.updated).to.be("0");
+              expect(data.created).to.be.a('number');
+              expect(data.created).to.be("0");
+              expect(data.id).to.be.a('number');
+              expect(data.id).to.be("0");
+              expect(data.type).to.be.a(AhanaApi.ModelsSubmissionType);
+                  expect(data.updated).to.be.a('number');
+              expect(data.updated).to.be("0");
+              expect(data.verdict).to.be.a(AhanaApi.ModelsVerdictType);
+      
+            }
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
       describe('submissionControllerGetSubmission', function() {
         it('should call submissionControllerGetSubmission successfully', function(done) {
           // TODO: uncomment, update parameter values for submissionControllerGetSubmission call and complete the assertions

@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *AhanaApi.ContestsApi* | [**contestControllerRegisterForContest**](docs/ContestsApi.md#contestControllerRegisterForContest) | **POST** /contests/{contestId}/register | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetAllSeries**](docs/SeriesApi.md#seriesControllerGetAllSeries) | **GET** /series/ | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetSeries**](docs/SeriesApi.md#seriesControllerGetSeries) | **GET** /series/{sid} | 
+*AhanaApi.SubmissionsApi* | [**submissionControllerGetAllUserSubmissionsByContest**](docs/SubmissionsApi.md#submissionControllerGetAllUserSubmissionsByContest) | **GET** /submissions/ | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmission**](docs/SubmissionsApi.md#submissionControllerGetSubmission) | **GET** /submissions/{submissionId} | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmissionDeadlineByProblem**](docs/SubmissionsApi.md#submissionControllerGetSubmissionDeadlineByProblem) | **GET** /submissions/deadline | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerSubmitCodeSolution**](docs/SubmissionsApi.md#submissionControllerSubmitCodeSolution) | **POST** /submissions/code | 

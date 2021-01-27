@@ -57,7 +57,7 @@
      */
 
     /**
-     * Get Input File only if the submission deadline for the user is on
+     * Get Input File only if the submission deadline for the user is on or the contest ended
      * @param {String} key key
      * @param {Number} pid the problem id you want to get
      * @param {module:api/CodingProblemsApi~codingProblemControllerDownloadInputFileCallback} callback The callback function, accepting three arguments: error, data, response
