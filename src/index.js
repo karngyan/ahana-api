@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsCodingProblem', 'model/ModelsContest', 'model/ModelsContestResponse', 'model/ModelsEUser', 'model/ModelsRSubmissionDeadline', 'model/ModelsSeries', 'model/ModelsSignUpMode', 'model/ModelsSubmission', 'model/ModelsSubmissionDeadline', 'model/ModelsSubmissionResponse', 'model/ModelsSubmissionType', 'model/ModelsUser', 'model/ModelsUserType', 'model/ModelsVerdictType', 'api/CodingProblemsApi', 'api/ContestsApi', 'api/SeriesApi', 'api/SubmissionsApi', 'api/UsersApi'], factory);
+    define(['ApiClient', 'model/ModelsASubmissionMcq', 'model/ModelsCodingProblem', 'model/ModelsContest', 'model/ModelsContestResponse', 'model/ModelsEUser', 'model/ModelsMcqProblem', 'model/ModelsMcqType', 'model/ModelsRSubmissionDeadline', 'model/ModelsSeries', 'model/ModelsSignUpMode', 'model/ModelsSubmission', 'model/ModelsSubmissionDeadline', 'model/ModelsSubmissionMcq', 'model/ModelsSubmissionResponse', 'model/ModelsSubmissionType', 'model/ModelsUser', 'model/ModelsUserType', 'model/ModelsVerdictType', 'api/CodingProblemsApi', 'api/ContestsApi', 'api/McqProblemsApi', 'api/SeriesApi', 'api/SubmissionsApi', 'api/SubmissionsMcqApi', 'api/UsersApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ModelsCodingProblem'), require('./model/ModelsContest'), require('./model/ModelsContestResponse'), require('./model/ModelsEUser'), require('./model/ModelsRSubmissionDeadline'), require('./model/ModelsSeries'), require('./model/ModelsSignUpMode'), require('./model/ModelsSubmission'), require('./model/ModelsSubmissionDeadline'), require('./model/ModelsSubmissionResponse'), require('./model/ModelsSubmissionType'), require('./model/ModelsUser'), require('./model/ModelsUserType'), require('./model/ModelsVerdictType'), require('./api/CodingProblemsApi'), require('./api/ContestsApi'), require('./api/SeriesApi'), require('./api/SubmissionsApi'), require('./api/UsersApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ModelsASubmissionMcq'), require('./model/ModelsCodingProblem'), require('./model/ModelsContest'), require('./model/ModelsContestResponse'), require('./model/ModelsEUser'), require('./model/ModelsMcqProblem'), require('./model/ModelsMcqType'), require('./model/ModelsRSubmissionDeadline'), require('./model/ModelsSeries'), require('./model/ModelsSignUpMode'), require('./model/ModelsSubmission'), require('./model/ModelsSubmissionDeadline'), require('./model/ModelsSubmissionMcq'), require('./model/ModelsSubmissionResponse'), require('./model/ModelsSubmissionType'), require('./model/ModelsUser'), require('./model/ModelsUserType'), require('./model/ModelsVerdictType'), require('./api/CodingProblemsApi'), require('./api/ContestsApi'), require('./api/McqProblemsApi'), require('./api/SeriesApi'), require('./api/SubmissionsApi'), require('./api/SubmissionsMcqApi'), require('./api/UsersApi'));
   }
-}(function(ApiClient, ModelsCodingProblem, ModelsContest, ModelsContestResponse, ModelsEUser, ModelsRSubmissionDeadline, ModelsSeries, ModelsSignUpMode, ModelsSubmission, ModelsSubmissionDeadline, ModelsSubmissionResponse, ModelsSubmissionType, ModelsUser, ModelsUserType, ModelsVerdictType, CodingProblemsApi, ContestsApi, SeriesApi, SubmissionsApi, UsersApi) {
+}(function(ApiClient, ModelsASubmissionMcq, ModelsCodingProblem, ModelsContest, ModelsContestResponse, ModelsEUser, ModelsMcqProblem, ModelsMcqType, ModelsRSubmissionDeadline, ModelsSeries, ModelsSignUpMode, ModelsSubmission, ModelsSubmissionDeadline, ModelsSubmissionMcq, ModelsSubmissionResponse, ModelsSubmissionType, ModelsUser, ModelsUserType, ModelsVerdictType, CodingProblemsApi, ContestsApi, McqProblemsApi, SeriesApi, SubmissionsApi, SubmissionsMcqApi, UsersApi) {
   'use strict';
 
   /**
@@ -63,6 +63,11 @@
      */
     ApiClient: ApiClient,
     /**
+     * The ModelsASubmissionMcq model constructor.
+     * @property {module:model/ModelsASubmissionMcq}
+     */
+    ModelsASubmissionMcq: ModelsASubmissionMcq,
+    /**
      * The ModelsCodingProblem model constructor.
      * @property {module:model/ModelsCodingProblem}
      */
@@ -82,6 +87,16 @@
      * @property {module:model/ModelsEUser}
      */
     ModelsEUser: ModelsEUser,
+    /**
+     * The ModelsMcqProblem model constructor.
+     * @property {module:model/ModelsMcqProblem}
+     */
+    ModelsMcqProblem: ModelsMcqProblem,
+    /**
+     * The ModelsMcqType model constructor.
+     * @property {module:model/ModelsMcqType}
+     */
+    ModelsMcqType: ModelsMcqType,
     /**
      * The ModelsRSubmissionDeadline model constructor.
      * @property {module:model/ModelsRSubmissionDeadline}
@@ -107,6 +122,11 @@
      * @property {module:model/ModelsSubmissionDeadline}
      */
     ModelsSubmissionDeadline: ModelsSubmissionDeadline,
+    /**
+     * The ModelsSubmissionMcq model constructor.
+     * @property {module:model/ModelsSubmissionMcq}
+     */
+    ModelsSubmissionMcq: ModelsSubmissionMcq,
     /**
      * The ModelsSubmissionResponse model constructor.
      * @property {module:model/ModelsSubmissionResponse}
@@ -143,6 +163,11 @@
      */
     ContestsApi: ContestsApi,
     /**
+     * The McqProblemsApi service constructor.
+     * @property {module:api/McqProblemsApi}
+     */
+    McqProblemsApi: McqProblemsApi,
+    /**
      * The SeriesApi service constructor.
      * @property {module:api/SeriesApi}
      */
@@ -152,6 +177,11 @@
      * @property {module:api/SubmissionsApi}
      */
     SubmissionsApi: SubmissionsApi,
+    /**
+     * The SubmissionsMcqApi service constructor.
+     * @property {module:api/SubmissionsMcqApi}
+     */
+    SubmissionsMcqApi: SubmissionsMcqApi,
     /**
      * The UsersApi service constructor.
      * @property {module:api/UsersApi}

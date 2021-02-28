@@ -126,27 +126,34 @@ Class | Method | HTTP request | Description
 *AhanaApi.ContestsApi* | [**contestControllerGetContest**](docs/ContestsApi.md#contestControllerGetContest) | **GET** /contests/{contestId} | 
 *AhanaApi.ContestsApi* | [**contestControllerGetContestsBySeries**](docs/ContestsApi.md#contestControllerGetContestsBySeries) | **GET** /contests/ | 
 *AhanaApi.ContestsApi* | [**contestControllerRegisterForContest**](docs/ContestsApi.md#contestControllerRegisterForContest) | **POST** /contests/{contestId}/register | 
+*AhanaApi.McqProblemsApi* | [**mcqProblemControllerGetMcqProblemsByContest**](docs/McqProblemsApi.md#mcqProblemControllerGetMcqProblemsByContest) | **GET** /mcq-problems/ | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetAllSeries**](docs/SeriesApi.md#seriesControllerGetAllSeries) | **GET** /series/ | 
 *AhanaApi.SeriesApi* | [**seriesControllerGetSeries**](docs/SeriesApi.md#seriesControllerGetSeries) | **GET** /series/{sid} | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetAllUserSubmissionsByContest**](docs/SubmissionsApi.md#submissionControllerGetAllUserSubmissionsByContest) | **GET** /submissions/ | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmission**](docs/SubmissionsApi.md#submissionControllerGetSubmission) | **GET** /submissions/{submissionId} | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerGetSubmissionDeadlineByProblem**](docs/SubmissionsApi.md#submissionControllerGetSubmissionDeadlineByProblem) | **GET** /submissions/deadline | 
 *AhanaApi.SubmissionsApi* | [**submissionControllerSubmitCodeSolution**](docs/SubmissionsApi.md#submissionControllerSubmitCodeSolution) | **POST** /submissions/code | 
+*AhanaApi.SubmissionsMcqApi* | [**mcqSubmissionControllerGetAllUserMcqSubmissionByContest**](docs/SubmissionsMcqApi.md#mcqSubmissionControllerGetAllUserMcqSubmissionByContest) | **GET** /submissions-mcq/ | 
+*AhanaApi.SubmissionsMcqApi* | [**mcqSubmissionControllerSubmitMcqProblems**](docs/SubmissionsMcqApi.md#mcqSubmissionControllerSubmitMcqProblems) | **POST** /submissions-mcq/ | 
 *AhanaApi.UsersApi* | [**userControllerCreateUser**](docs/UsersApi.md#userControllerCreateUser) | **POST** /users/ | 
 *AhanaApi.UsersApi* | [**userControllerGetUser**](docs/UsersApi.md#userControllerGetUser) | **GET** /users/{firebaseUid} | 
 
 
 ## Documentation for Models
 
+ - [AhanaApi.ModelsASubmissionMcq](docs/ModelsASubmissionMcq.md)
  - [AhanaApi.ModelsCodingProblem](docs/ModelsCodingProblem.md)
  - [AhanaApi.ModelsContest](docs/ModelsContest.md)
  - [AhanaApi.ModelsContestResponse](docs/ModelsContestResponse.md)
  - [AhanaApi.ModelsEUser](docs/ModelsEUser.md)
+ - [AhanaApi.ModelsMcqProblem](docs/ModelsMcqProblem.md)
+ - [AhanaApi.ModelsMcqType](docs/ModelsMcqType.md)
  - [AhanaApi.ModelsRSubmissionDeadline](docs/ModelsRSubmissionDeadline.md)
  - [AhanaApi.ModelsSeries](docs/ModelsSeries.md)
  - [AhanaApi.ModelsSignUpMode](docs/ModelsSignUpMode.md)
  - [AhanaApi.ModelsSubmission](docs/ModelsSubmission.md)
  - [AhanaApi.ModelsSubmissionDeadline](docs/ModelsSubmissionDeadline.md)
+ - [AhanaApi.ModelsSubmissionMcq](docs/ModelsSubmissionMcq.md)
  - [AhanaApi.ModelsSubmissionResponse](docs/ModelsSubmissionResponse.md)
  - [AhanaApi.ModelsSubmissionType](docs/ModelsSubmissionType.md)
  - [AhanaApi.ModelsUser](docs/ModelsUser.md)
